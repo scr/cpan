@@ -1,0 +1,12 @@
+# http://module-build.sourceforge.net/META-spec.html
+#XXXXXXX This is a prototype!!!  It will change in the future!!! XXXXX#
+name:         LWP-Protocol-socks
+version:      1.1
+version_from: lib/LWP/Protocol/socks.pm
+installdirs:  site
+requires:
+    IO::Socket::Socks:             0.1
+    IO::Socket::SSL:               0.96
+
+distribution_type: module
+generated_by: ExtUtils::MakeMaker version 6.30

@@ -1,0 +1,8 @@
+Changes
+Makefile.PL
+MANIFEST
+README
+t/LWP-Protocol-socks.t
+lib/LWP/Protocol/socks.pm
+lib/URI/socks.pm
+META.yml
