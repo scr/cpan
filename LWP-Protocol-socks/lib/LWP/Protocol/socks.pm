@@ -2,7 +2,7 @@
 package LWP::Protocol::http::socks;
 require LWP::Protocol::http;
 our @ISA = qw(LWP::Protocol::http);
-our $VERSION = "1.1";
+our $VERSION = "1.2";
 LWP::Protocol::implementor('http::socks' => 'LWP::Protocol::http::socks');
 
 sub new {
