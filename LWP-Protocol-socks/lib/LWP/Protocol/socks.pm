@@ -63,7 +63,7 @@ require LWP::Protocol::https;
 require IO::Socket::Socks;
 use IO::Socket::SSL;
 require Net::HTTPS;
-our @ISA = qw(LWP::Protocol::https::Socket);
+our @ISA = qw(IO::Socket::SSL LWP::Protocol::https::Socket);
 
 sub new {
     my $class = shift;
