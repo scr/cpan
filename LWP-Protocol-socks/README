@@ -1,5 +1,9 @@
-LWP-Protocol-socks version 0.01
+LWP-Protocol-socks
 ===============================
+
+FYI, files are checked into git@github.com:scr/cpan.git
+
+  git clone git@github.com:scr/cpan.git
 
 The README is used to introduce the module and provide instructions on
 how to install the module, any machine dependencies it may have (for

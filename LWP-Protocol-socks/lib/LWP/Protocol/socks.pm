@@ -2,7 +2,7 @@
 package LWP::Protocol::http::socks;
 require LWP::Protocol::http;
 our @ISA = qw(LWP::Protocol::http);
-our $VERSION = "1.2";
+our $VERSION = "1.3";
 LWP::Protocol::implementor('http::socks' => 'LWP::Protocol::http::socks');
 
 sub new {
@@ -101,6 +101,16 @@ sub request {
     $protocol->{proxy_sock_opts} = [ProxyAddr => $proxy->host,
 				    ProxyPort => $proxy->port,
 				    ];
+
+    # [RT 48172] Adding user/pass functionality
+    if ( $proxy->userinfo() ) {
+	push(@{$protocol->{proxy_sock_opts}},
+	     AuthType => 'userpass',
+	     Username => $proxy->user(),
+	     Password => $proxy->pass(),
+	    );
+    }
+
     $protocol->request($request, undef, $arg, $size, $timeout);
 }
 
