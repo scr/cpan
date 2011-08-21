@@ -6,8 +6,9 @@ WriteMakefile(
     NAME              => 'LWP::Protocol::socks',
     VERSION_FROM      => 'lib/LWP/Protocol/socks.pm', # finds $VERSION
     'PREREQ_PM' => {
-        'IO::Socket::Socks' => 0.1,
+        'IO::Socket::Socks' => 0.2,
         'IO::Socket::SSL'   => 0.96,
+        'LWP'               => 0,
     },
     ($] >= 5.005 ?     ## Add these new keywords supported since 5.005
       (ABSTRACT_FROM  => 'lib/LWP/Protocol/socks.pm', # retrieve abstract from module
