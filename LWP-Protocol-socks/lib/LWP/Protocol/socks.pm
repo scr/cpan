@@ -37,6 +37,11 @@ sub configure {
     $self->http_configure($args);
 }
 
+# hack out the connect so it doesn't reconnect
+sub http_connect {
+    1;
+}
+
 ##############################
 package LWP::Protocol::https::socks;
 require LWP::Protocol::https;
