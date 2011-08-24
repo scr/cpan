@@ -23,3 +23,13 @@ sub pass {
 }
 
 1;
+
+__END__
+
+=head1 NAME
+
+URI::Socks - support for socks://host:port
+
+=head1 AUTHOR
+
+Sheridan C Rawlins E<lt>F<sheridan.rawlins@yahoo.com>E<gt>

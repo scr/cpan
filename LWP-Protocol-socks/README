@@ -22,7 +22,7 @@ To install this module type the following:
 
    perl Makefile.PL
    make
-   make test
+   make test # possibly setting env SOCKS_PROXY=proxyhost:proxyport
    make install
 
 DEPENDENCIES

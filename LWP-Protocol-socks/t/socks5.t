@@ -4,17 +4,15 @@
 
 #########################
 
-# change 'tests => 1' to 'tests => last_test_to_print';
-
 use Test::More;
-my $hostname = `hostname`;
-chomp($hostname);
-if ( $hostname !~ /yahoo.com$/ ) {
-    plan skip_all => 'not running from within Yahoo';
-}
-else {
+
+if ($ENV{SOCKS_PROXY}) {
     plan tests => 3;
 }
+else {
+    plan skip_all => 'no proxy defined; set SOCKS_PROXY';
+}
+
 use_ok(qw(LWP::UserAgent));
 #########################
 
@@ -24,7 +22,7 @@ use_ok(qw(LWP::UserAgent));
 my $ua = new LWP::UserAgent(agent => 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.5) Gecko/20060719 Firefox/1.5.0.5');
 ok($ua, 'got ua');
 
-$ua->proxy([qw(http https)] => 'socks://socks.yahoo.com:1080');
+$ua->proxy([qw(http https)] => "socks://$ENV{SOCKS_PROXY}");
 
 my $response = $ua->get("http://www.freebsd.org");
 is($response->code, 200, 'get www.freebsd.org code is 200')
