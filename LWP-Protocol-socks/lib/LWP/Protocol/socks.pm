@@ -2,7 +2,7 @@
 package LWP::Protocol::http::socks;
 require LWP::Protocol::http;
 our @ISA = qw(LWP::Protocol::http);
-our $VERSION = "1.3";
+our $VERSION = "1.4";
 LWP::Protocol::implementor('http::socks' => 'LWP::Protocol::http::socks');
 
 sub new {
@@ -35,6 +35,11 @@ sub configure {
 
     $self->SUPER::configure($args);
     $self->http_configure($args);
+}
+
+# hack out the connect so it doesn't reconnect
+sub http_connect {
+    1;
 }
 
 ##############################
