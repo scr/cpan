@@ -163,6 +163,12 @@ Then just use your $ua object as usual!
  my $response = $ua->get("https://www.microsoft.com");
  print $response->code,' ', $response->message,"\n";
 
+=head1 NOTES
+
+I don't have much time to contribute to this.  If you'd like to
+contribute, please fork https://github.com/scr/cpan and send me a pull
+request.
+
 =head1 AUTHORS
 
 Sheridan C Rawlins E<lt>F<sheridan.rawlins@yahoo.com>E<gt>
