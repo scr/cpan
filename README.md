@@ -1,0 +1,1 @@
+Shared repository for contributing to [Sheridan Rawlins' CPAN modules](http://search.cpan.org/~scr/).
