@@ -33,7 +33,7 @@ sub configure {
     my $connectAddr = $args->{ConnectAddr} = delete $args->{PeerAddr};
     my $connectPort = $args->{ConnectPort} = delete $args->{PeerPort};
 
-    $self->SUPER::configure($args);
+    $self->SUPER::configure($args) or return;
     $self->http_configure($args);
 }
 
