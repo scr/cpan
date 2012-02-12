@@ -1,5 +1,6 @@
 Revision history for Perl extension LWP::Protocol::socks.
-
+1.6   Sun Feb 12 09:54:12 PST 2012
+      - Fix Issue with newer LWP.
 1.4   Tue Aug 23 23:19:57 PDT 2011
       - Incorporate Oleg's fixes to the following bugs:
         - https://rt.cpan.org/Ticket/Display.html?id=63468
