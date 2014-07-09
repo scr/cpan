@@ -82,9 +82,17 @@ sub new {
     delete $args{ProxyPort};
     delete $args{ConnectAddr};
     delete $args{ConnectPort};
-    my $ssl = new_from_fd LWP::Protocol::https::socks::Socket($socks, %args);
-    $ssl->http_configure(\%args);
-    $ssl;
+    
+    unless ($socks && $class->start_SSL($socks, %args)) {
+        my $status = 'error while setting up ssl connection';
+        if ($@) {
+            $status .= " ($@)";
+        }
+        die($status);
+    }
+    
+    $socks->http_configure(\%args);
+    $socks;
 }
 
 # hack out the connect so it doesn't reconnect
