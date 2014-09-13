@@ -2,7 +2,6 @@
 package LWP::Protocol::http::socks;
 require LWP::Protocol::http;
 our @ISA = qw(LWP::Protocol::http);
-our $VERSION = "1.7";
 LWP::Protocol::implementor('http::socks' => 'LWP::Protocol::http::socks');
 
 sub new {
@@ -104,6 +103,7 @@ sub http_connect {
 package LWP::Protocol::socks;
 require LWP::Protocol;
 our @ISA = qw(LWP::Protocol);
+our $VERSION = "1.7";
 
 sub request {
     my($self, $request, $proxy, $arg, $size, $timeout) = @_;
